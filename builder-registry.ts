@@ -1,6 +1,8 @@
 "use client";
-import { builder, Builder } from "@builder.io/react";
+import { builder, Builder, withChildren } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
+
+import MainLayout from "@/layouts/MainLayout";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -12,4 +14,8 @@ Builder.registerComponent(Counter, {
       type: "number",
     },
   ],
+});
+
+Builder.registerComponent(withChildren(MainLayout), {
+  name: "MainLayout",
 });
