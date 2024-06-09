@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import MainFooter from '../MainFooter'
 
 type MainLayoutProps = {
   children: React.ReactNode
@@ -33,9 +34,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         {children}
       </main>
 
-      <footer>
-        footer layout
-      </footer>
+      <MainFooter />
     </>
   )
 }

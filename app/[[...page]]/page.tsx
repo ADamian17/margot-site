@@ -38,7 +38,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const content = await getPageContent(builderModelName, "/" + (params?.page?.join("/") || ""))
   const prevMetadata = await parent
-  
+
   return {
     ...prevMetadata,
     ...content?.data?.seo

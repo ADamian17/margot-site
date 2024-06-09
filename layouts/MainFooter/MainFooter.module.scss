@@ -1,0 +1,23 @@
+@use 'abstracts' as *;
+
+.footer {
+  .socialMediaSection {
+    // grid-column: 1 / span 2;
+    background-color: $color-primary;
+  }
+
+  .linksSection {
+    // grid-column: 3 / span 2;
+    background-color: $color-primary-dark;
+  }
+
+  .contactSection {
+    background-color: $color-red;
+  }
+
+  .copyRightSection {
+    text-align: center;
+    color: $grey-50;
+    font-size: 1.4rem;
+  }
+}
