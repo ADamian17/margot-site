@@ -9,7 +9,7 @@ type MainLayoutProps = {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <>
-      <header>
+      <header id="top-nav">
         <div>
           <p>Logo</p>
         </div>

@@ -23,6 +23,12 @@ a,
 a:visited,
 a:link {
   text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
 }
 
 input,

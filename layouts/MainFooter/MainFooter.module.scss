@@ -1,21 +1,104 @@
 @use 'abstracts' as *;
 
 .footer {
+  .contactSection, 
+  .copyRightSection, 
+  .quickLinksSection, 
   .socialMediaSection {
-    // grid-column: 1 / span 2;
-    background-color: $color-primary;
+    padding: 2.4rem 0;
   }
 
-  .linksSection {
-    // grid-column: 3 / span 2;
-    background-color: $color-primary-dark;
+  .socialMediaSection {
+    display: grid;
+    justify-items: center;
+    padding: 2.4rem 0;
+    row-gap: 2.4rem;
+    // grid-column: 1 / span 2;
+
+    .dreSection {
+      font-size: 1.4rem;
+      color: $grey-50;
+    }
+
+    .socialMediaIcons{
+      display: flex;
+      column-gap: 2.4rem;
+      align-items: center;
+    }
+
+    .socialMediaLink {
+      width: 3rem;
+      height: 3rem;
+      display: inline-block;
+    }
+
+    .socialMediaIcon {
+      width: 100%;
+      height: 100%;
+      fill: $grey-50;
+    }
   }
+
+  .quickLinksSection {
+    text-align: center;
+    text-transform: capitalize;
+
+    .quickLinksTitle {
+      font-size: 2rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .linksSection {
+      // grid-column: 3 / span 2;
+      display: grid;
+      grid-auto-rows: min-content;
+      justify-items: center;
+      row-gap: 1.4rem;
+      text-decoration: underline;
+      font-size: 1.8rem;
+    }
+  }
+
 
   .contactSection {
-    background-color: $color-red;
+    display: grid;
+    row-gap: 2.4rem;
+    justify-content: center;
+    text-align: center;
+
+    .contactTitle {
+      margin: 1rem 0 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4rem;
+    }
+
+    .contactSectionImage {
+      display: inline-block;
+      background-color: red;
+      width: 29.8rem;
+      height: 38.3rem;
+    }
+
+    .contactSectionCopy {
+      display: inline-block;
+      border-top:1px solid $grey-80;
+      margin-bottom: 8rem;
+
+      .copy {
+        display: grid;
+        row-gap: 1.4rem;
+        justify-content: center;
+        font-size: 1.4rem;
+
+        .dreCopy {
+          border-bottom: 1px solid $grey-80;
+        }
+      }
+    }
   }
 
   .copyRightSection {
+    border-top:1px solid $grey-80;
     text-align: center;
     color: $grey-50;
     font-size: 1.4rem;
