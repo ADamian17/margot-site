@@ -1,100 +1,118 @@
 @use 'abstracts' as *;
 
 .footer {
-  .contactSection, 
-  .copyRightSection, 
-  .quickLinksSection, 
-  .socialMediaSection {
-    padding: 2.4rem 0;
-  }
-
-  .socialMediaSection {
+  .footerWrapper {
     display: grid;
-    justify-items: center;
-    padding: 2.4rem 0;
     row-gap: 2.4rem;
-    // grid-column: 1 / span 2;
 
-    .dreSection {
-      font-size: 1.4rem;
-      color: $grey-50;
-    }
-
-    .socialMediaIcons{
-      display: flex;
-      column-gap: 2.4rem;
-      align-items: center;
-    }
-
-    .socialMediaLink {
-      width: 3rem;
-      height: 3rem;
-      display: inline-block;
-    }
-
-    .socialMediaIcon {
-      width: 100%;
-      height: 100%;
-      fill: $grey-50;
-    }
-  }
-
-  .quickLinksSection {
-    text-align: center;
-    text-transform: capitalize;
-
-    .quickLinksTitle {
-      font-size: 2rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .linksSection {
-      // grid-column: 3 / span 2;
+    .socialMediaSection {
       display: grid;
       grid-auto-rows: min-content;
       justify-items: center;
-      row-gap: 1.4rem;
-      text-decoration: underline;
-      font-size: 1.8rem;
-    }
-  }
+      align-items: start;
+      padding: 2.4rem 0;
+      row-gap: 2.4rem;
 
+      .logo {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        background-color: red;
 
-  .contactSection {
-    display: grid;
-    row-gap: 2.4rem;
-    justify-content: center;
-    text-align: center;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
 
-    .contactTitle {
-      margin: 1rem 0 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.4rem;
-    }
-
-    .contactSectionImage {
-      display: inline-block;
-      background-color: red;
-      width: 29.8rem;
-      height: 38.3rem;
-    }
-
-    .contactSectionCopy {
-      display: inline-block;
-      border-top:1px solid $grey-80;
-      margin-bottom: 8rem;
-
-      .copy {
-        display: grid;
-        row-gap: 1.4rem;
-        justify-content: center;
+      .dreSection {
         font-size: 1.4rem;
+        color: $grey-50;
+      }
 
-        .dreCopy {
-          border-bottom: 1px solid $grey-80;
+      .socialMediaIcons{
+        display: flex;
+        column-gap: 2.4rem;
+        align-items: center;
+      }
+
+      .socialMediaLink {
+        width: 3rem;
+        height: 3rem;
+        display: inline-block;
+      }
+
+      .socialMediaIcon {
+        width: 100%;
+        height: 100%;
+        fill: $grey-50;
+      }
+    }
+
+    .quickLinksSection {
+      display: grid;
+      grid-auto-rows: min-content;
+      align-content: center;
+      row-gap: 1.4rem;
+      text-align: center;
+      text-transform: capitalize;
+
+      .quickLinksTitle {
+        font-size: 2rem;
+      }
+
+      .linksSection {
+        // grid-column: 3 / span 2;
+        display: grid;
+        grid-auto-rows: min-content;
+        justify-items: center;
+        row-gap: 1.4rem;
+        text-decoration: underline;
+        font-size: 1.8rem;
+      }
+    }
+
+
+    .contactSection {
+      display: grid;
+      row-gap: 2.4rem;
+      justify-content: center;
+      text-align: center;
+
+      .contactTitle {
+        margin: 1rem 0 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4rem;
+      }
+
+      .contactSectionImage {
+        display: inline-block;
+        background-color: red;
+        width: 100%;
+        height: 38.3rem;
+      }
+
+      .contactSectionCopy {
+        display: inline-block;
+        border-top:1px solid $grey-80;
+        margin-bottom: 8rem;
+
+        .copy {
+          display: grid;
+          row-gap: 1.4rem;
+          justify-content: center;
+          font-size: 1.4rem;
+
+          .dreCopy {
+            border-bottom: 1px solid $grey-80;
+            width: fit-content;
+            text-align: center;
+            justify-self: center;
+          }
         }
       }
     }
+
   }
 
   .copyRightSection {
@@ -102,5 +120,81 @@
     text-align: center;
     color: $grey-50;
     font-size: 1.4rem;
+    display: grid;
+    row-gap: 1.4rem;
+    padding: 2.4rem;
+
+    .toTop {
+      align-items: center;
+      border-radius: 0.4rem;
+      column-gap: 0.4rem;
+      display: flex;
+      justify-content: center;
+      justify-self: center;
+      padding: 0.5rem 1rem;
+      width: fit-content;
+      transition: all 0.3s ease-in-out;
+      text-transform: uppercase;
+      background-color: $grey-80;
+      color: $color-default-white;
+
+      svg {
+        fill: $grey-50;
+        fill: currentColor;
+        height: 1.8rem;
+        width: 1.8rem;
+      }
+        
+      &:hover {
+        background-color: darken($grey-80, 10%);
+        box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+        translate: 0 -0.2rem;
+      }
+    }
+
+    .developerLink { 
+      text-decoration: underline;
+    }
+  }
+
+  @include media-query("sm", "up"){
+    .footerWrapper {
+      grid-template-columns: repeat(2, 1fr);
+
+      .contactSection {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  @include media-query("md", "up"){      
+    .quickLinksSection {
+      border-left: 1px solid $grey-80;
+    }
+
+    .copyRightSection {
+      margin-top: 2.4rem;
+    }
+  }
+
+  @include media-query("lg", "up"){
+    .footerWrapper {
+      grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
+
+      .quickLinksSection {
+        border-right: 1px solid $grey-80;
+      }
+
+      .contactSection {
+        grid-column: initial;
+        justify-items: center;
+
+        .contactSectionImage {
+          width: 22.2rem;
+          height: 27.7rem;
+        }
+      }
+    }
   }
 }
+

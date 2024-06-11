@@ -13,6 +13,7 @@ type ContainerType = {
 type ContentType = {
   className?: string;
   children: React.ReactNode;
+  noGap?: boolean;
 } & React.DetailedHTMLProps<
   React.AllHTMLAttributes<HTMLDivElement>,
   HTMLDivElement
@@ -24,14 +25,14 @@ const Container = ({ className, children, ...rest }: ContainerType) => (
   </section>
 )
 
-const FullWidth: React.FC<ContentType> = ({ className, children, ...rest }) => (
-  <div className={`${styles.fullWidth} ${className}`} {...rest}>
+const FullWidth: React.FC<ContentType> = ({ className, children, noGap, ...rest }) => (
+  <div className={`${styles.fullWidth} ${noGap && styles.noGap} ${className}`} {...rest}>
     {children}
   </div>
 )
 
-const Centered: React.FC<ContentType> = ({ className, children, ...rest }) => (
-  <div className={`${styles.centered} ${className}`} {...rest}>
+const Centered: React.FC<ContentType> = ({ className, children, noGap, ...rest }) => (
+  <div className={`${styles.centered} ${noGap && styles.noGap} ${className}`} {...rest}>
     {children}
   </div>
 )
