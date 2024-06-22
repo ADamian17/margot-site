@@ -1,0 +1,6 @@
+@use "abstracts" as *;
+
+.textArea {
+  @extend %input;
+  resize: vertical;
+}

@@ -5,9 +5,10 @@ import styles from './Col.module.scss'
 type ColProps = {
   children: React.ReactNode
   span?: number | Record<"sm" | "md" | "lg", number>
+  className?: string
 }
 
-const Col = ({ children, span }: ColProps) => {
+const Col: React.FC<ColProps> = ({ children, span, className }) => {
   const colStyles: Record<string, any> = {
     ["--col-span-amount-sm"]: typeof span === "number" && span >= 12 ? 12 : (span ?? 1),
     ["--col-span-amount-md"]: typeof span === "number" && span >= 12 ? 12 : (span ?? 1),
@@ -22,7 +23,7 @@ const Col = ({ children, span }: ColProps) => {
 
   return (
     <div
-      className={styles.col}
+      className={`${styles.col} ${className}`}
       style={colStyles}
     >
       {children}
