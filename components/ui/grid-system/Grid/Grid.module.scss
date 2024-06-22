@@ -1,0 +1,22 @@
+@use "abstracts" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: set-inner-columns();
+  gap: 2.4rem;
+
+  @include media-query("md", "up") {
+    grid-template-columns: set-inner-columns(8);
+  }
+
+  @include media-query("lg", "up") {
+    grid-template-columns: set-inner-columns(12);
+    justify-self: center;
+    max-width: 111rem;
+    width: 100%;
+  }
+
+  @include media-query("xl", "up") {
+    width: 111rem;
+  }
+}
