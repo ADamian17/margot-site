@@ -81,9 +81,10 @@
       text-align: center;
 
       .contactTitle {
+        @extend %heading;
+
         margin: 1rem 0 2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.4rem;
+        max-width: 22rem;
       }
 
       .contactSectionImage {

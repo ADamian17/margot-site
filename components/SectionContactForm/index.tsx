@@ -6,6 +6,7 @@ import Grid from "../ui/grid-system/Grid";
 import SocialMediaIcons from "../SocialMediaIcons";
 
 import styles from "./SectionContactForm.module.scss";
+import DreAndEmail from "../DreAndEmail";
 
 type ContactFormType = {};
 
@@ -13,24 +14,32 @@ const SectionContactForm: React.FC<ContactFormType> = (props) => {
   return (
     <Container isCentered>
       <Grid>
-        <Grid.Col span={{ sm: 4, md: 3, lg: 4 }}>
-          <section>
-            <div>
-              <h1>Let&apos;s Connect</h1>
-              <p>(203) 644-6117</p>
-              <p>margotmartin@grubbco.com</p>
-              <p>DRE 02145679</p>
-            </div>
+        <Grid.Col
+          span={{ sm: 4, md: 3, lg: 5 }}
+          className={styles.copySection}
+        >
+          <div className={styles.topSection}>
+            <p className={styles.heading}>Let&apos;s Connect</p>
+            <p className={styles.phoneNumber}>(203) 644 6117</p>
+          </div>
 
-            <div>
-              <p>Connect with me on social media</p>
+          <DreAndEmail withEmail />
 
-              <SocialMediaIcons />
-            </div>
-          </section>
+          <div className={styles.socialMedia}>
+            <p className={styles.heading}>social media</p>
+            <SocialMediaIcons />
+          </div>
         </Grid.Col>
 
-        <Grid.Col span={{ sm: 4, md: 5, lg: 8 }}>
+        <Grid.Col
+          span={{ sm: 4, md: 5, lg: 7 }}
+          className={styles.formContact}
+        >
+          <div className={styles.copySection}>
+            <p className={styles.heading}>contact form</p>
+            <p className={styles.subcopy}>I&apos;d love to here from you. </p>
+          </div>
+
           <ContactForm />
         </Grid.Col>
       </Grid>

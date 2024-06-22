@@ -6,6 +6,7 @@ import Container from '@/components/ui/Container'
 import styles from './MainFooter.module.scss'
 import SocialMediaIcons from '@/components/SocialMediaIcons'
 import Grid from '@/components/ui/grid-system/Grid'
+import DreAndEmail from '@/components/DreAndEmail'
 
 type MainFooterProps = {
   pathname: string
@@ -30,9 +31,7 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
                 />
               </Link>
 
-              <div className={styles.dreSection}>
-                <p>DRE 02145679</p>
-              </div>
+              <DreAndEmail />
 
               <SocialMediaIcons />
             </section>
@@ -65,13 +64,10 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
 
                 <ul className={styles.copy}>
                   <li>
-                    <p>(203) 644-6117</p>
+                    <p>(203) 644 6117</p>
                   </li>
                   <li>
-                    <p>margotmartin@grubbco.com</p>
-                  </li>
-                  <li className={styles.dreCopy}>
-                    <p>DRE 02145679</p>
+                    <DreAndEmail withEmail />
                   </li>
                 </ul>
               </div>

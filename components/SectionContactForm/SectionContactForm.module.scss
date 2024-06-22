@@ -1,0 +1,63 @@
+@use "abstracts" as *;
+
+.heading {
+  @extend %heading;
+}
+
+.copySection {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  margin-bottom: 9.6rem;
+
+  .topSection {
+    margin-bottom: 2.4rem;
+
+    .phoneNumber {
+      margin-top: 1rem;
+      letter-spacing: 0.6rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+    }
+  }
+
+  .socialMedia {
+    margin-top: 7.5rem;
+    display: grid;
+    place-items: center;
+    row-gap: 2.6rem;
+  }
+}
+
+.formContact {
+  text-align: center;
+
+  .copySection {
+    margin-bottom: 6.6rem;
+
+    .subcopy {
+      margin-top: 1rem;
+      font-size: 2.1rem;
+      line-height: 3rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@include media-query("md", "up") {
+  .copySection {
+    margin-bottom: 0;
+  }
+
+  .formContact {
+    border-left: 1px solid $grey-80;
+    padding-left: 3.5rem;
+  }
+}
+
+@include media-query("lg", "up") {
+  .formContact {
+    border-left: 1px solid $grey-80;
+    padding-left: 8.5rem;
+  }
+}

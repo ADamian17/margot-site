@@ -1,0 +1,16 @@
+@use "abstracts" as *;
+
+.dreSection {
+  color: $grey-40;
+  display: grid;
+  font-size: 1.4rem;
+  justify-content: center;
+  row-gap: 1rem;
+
+  .dreCopy {
+    border-bottom: 1px solid $grey-80;
+    width: fit-content;
+    text-align: center;
+    justify-self: center;
+  }
+}
