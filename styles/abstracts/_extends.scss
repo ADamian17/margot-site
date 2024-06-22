@@ -1,24 +1,8 @@
-@use './colors' as *;
-@use './variables' as *;
-@use './mixins' as *;
-
-%base-btn {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid $color-green;
-  color: $color-white;
-  padding: 0 0 1rem;
-  letter-spacing: 2.28571px;
-  text-transform: uppercase;
-
-  &:hover {
-    cursor: pointer;
-    color: $color-green;
-  }
-}
+@use "./colors" as *;
+@use "./mixins" as *;
 
 %button {
-  padding: 1.8rem 2.4rem;
+  padding: 1.2rem 1.6rem;
   display: inline-block;
   border: none;
   border-radius: 0;
@@ -27,16 +11,29 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s;
-  background-color: #6356e5;
-  color: #fff;
+  background-color: $grey-80;
+  color: $white;
 
   &:hover {
-    background-color: $color-primary-dark;
-    color: $color-default-white;
-    box-shadow: 0 1rem 2rem rgba($color-default-black, 0.15);
+    background-color: $grey-60;
+    color: $white;
+    box-shadow: 0 1rem 2rem rgba($grey-60, 0.15);
   }
 
   &:active {
-    box-shadow: 0 0.5rem 1rem rgba($color-default-black, 0.15);
+    box-shadow: 0 0.5rem 1rem rgba($grey-60, 0.15);
+  }
+}
+
+%input {
+  border-radius: 6px;
+  border: 1px solid $peach-90;
+  background: $peach-95;
+  padding: 1rem 1.4rem;
+  width: 100%;
+  color: inherit;
+
+  &::placeholder {
+    font-size: small;
   }
 }

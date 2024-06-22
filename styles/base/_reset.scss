@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 *,
 *::after,
@@ -33,12 +33,9 @@ ul {
 
 input,
 textarea {
-  color: $color-white;
   font-family: inherit;
   font-size: 1.6rem;
-  font-weight: 500;
   letter-spacing: -0.222222px;
   line-height: 2.6rem;
   max-width: 100%;
-  text-transform: uppercase;
 }
