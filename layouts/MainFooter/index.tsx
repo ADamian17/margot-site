@@ -5,6 +5,7 @@ import Container from '@/components/ui/Container'
 
 import styles from './MainFooter.module.scss'
 import SocialMediaIcons from '@/components/SocialMediaIcons'
+import Grid from '@/components/ui/grid-system/Grid'
 
 type MainFooterProps = {
   pathname: string
@@ -15,9 +16,9 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
 
   return (
     <footer className={styles.footer}>
-      <Container>
-        <Container.Centered>
-          <div className={styles.footerWrapper}>
+      <Container isCentered>
+        <Grid>
+          <Grid.Col span={12} className={styles.footerWrapper}>
             <section className={styles.socialMediaSection}>
               <Link href='/'>
                 <Image
@@ -75,34 +76,36 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
                 </ul>
               </div>
             </section>
+          </Grid.Col>
 
-          </div>
-          <section className={styles.copyRightSection}>
-            <Link
-              href={`${pathname}#top-nav`}
-              className={styles.toTop}
-            >
-              <svg>
-                <use href='/icons/icons-defs.svg#chevrons-up' />
-              </svg>
-
-              <span>to top</span>
-            </Link>
-
-            <p className={styles.copy}>
-              &copy; {year} Margot Martin | All rights reserved | Made by{' '}
-
+          <Grid.Col span={12}>
+            <section className={styles.copyRightSection}>
               <Link
-                className={styles.developerLink}
-                href='https://www.adonismartin.com/'
-                rel="nofollow"
-                target='_blank'
+                href={`${pathname}#top-nav`}
+                className={styles.toTop}
               >
-                Adonis D. Martin
+                <svg>
+                  <use href='/icons/icons-defs.svg#chevrons-up' />
+                </svg>
+
+                <span>to top</span>
               </Link>
-            </p>
-          </section>
-        </Container.Centered>
+
+              <p className={styles.copy}>
+                &copy; {year} Margot Martin | All rights reserved | Made by{' '}
+
+                <Link
+                  className={styles.developerLink}
+                  href='https://www.adonismartin.com/'
+                  rel="nofollow"
+                  target='_blank'
+                >
+                  Adonis D. Martin
+                </Link>
+              </p>
+            </section>
+          </Grid.Col>
+        </Grid>
       </Container>
     </footer>
   )

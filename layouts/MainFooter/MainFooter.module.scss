@@ -4,6 +4,8 @@
   .footerWrapper {
     display: grid;
     row-gap: 2.4rem;
+    border-top: 1px solid $grey-80;
+    padding-top: 4.8rem;
 
     .socialMediaSection {
       display: grid;
@@ -17,7 +19,6 @@
         display: inline-block;
         width: 100%;
         height: auto;
-        background-color: red;
 
         svg {
           width: 100%;
@@ -135,7 +136,7 @@
       transition: all 0.3s ease-in-out;
       text-transform: uppercase;
       background-color: $grey-80;
-      color: $color-default-white;
+      color: $white;
 
       svg {
         fill: $grey-50;
