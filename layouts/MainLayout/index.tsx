@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 import MainFooter from '../MainFooter'
+import {BuilderContent} from '@builder.io/react'
 
 type MainLayoutProps = {
   children: React.ReactNode
+  builderState: Record<string, any>
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children, builderState ,...rest}) => {
   return (
     <>
       <header id="top-nav">
@@ -30,11 +32,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       </header>
 
       <main>
-        main layout
         {children}
       </main>
 
-      <MainFooter />
+      <MainFooter pathname={builderState?.state?.location?.pathname || '/'} />
     </>
   )
 }

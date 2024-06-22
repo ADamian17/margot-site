@@ -1,5 +1,13 @@
 @use "abstracts" as *;
 
 .col {
-  grid-column: span var(--col-span-amount);
+  grid-column: span var(--col-span-amount-sm);
+
+  @include media-query("md", "up") {
+    grid-column: span var(--col-span-amount-md);
+  }
+
+  @include media-query("lg", "up") {
+    grid-column: span var(--col-span-amount-lg);
+  }
 }

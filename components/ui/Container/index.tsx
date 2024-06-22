@@ -3,8 +3,10 @@ import React from 'react';
 import styles from "./Container.module.scss";
 
 type ContainerType = {
-  className?: string;
   children: React.ReactNode;
+  className?: string;
+  isCentered?: boolean;
+  isFullWidth?: boolean;
 } & React.DetailedHTMLProps<
   React.AllHTMLAttributes<HTMLElement>,
   HTMLElement
@@ -19,8 +21,14 @@ type ContentType = {
   HTMLDivElement
 >
 
-const Container = ({ className, children, ...rest }: ContainerType) => (
-  <section className={`${styles.container} ${className}`} {...rest}>
+const Container = ({
+  children,
+  className,
+  isCentered,
+  isFullWidth,
+  ...rest
+}: ContainerType) => (
+  <section className={`${styles.container} ${isCentered && styles.isCentered} ${isFullWidth && styles.isFullWidth} ${className}`} {...rest}>
     {children}
   </section>
 )

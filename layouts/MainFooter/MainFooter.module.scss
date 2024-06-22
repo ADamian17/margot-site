@@ -1,4 +1,4 @@
-@use 'abstracts' as *;
+@use "abstracts" as *;
 
 .footer {
   .footerWrapper {
@@ -30,16 +30,17 @@
         color: $grey-50;
       }
 
-      .socialMediaIcons{
+      .socialMediaIcons {
         display: flex;
         column-gap: 2.4rem;
         align-items: center;
       }
 
       .socialMediaLink {
-        width: 3rem;
-        height: 3rem;
-        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: grid;
+        place-content: center;
       }
 
       .socialMediaIcon {
@@ -72,7 +73,6 @@
       }
     }
 
-
     .contactSection {
       display: grid;
       row-gap: 2.4rem;
@@ -94,7 +94,7 @@
 
       .contactSectionCopy {
         display: inline-block;
-        border-top:1px solid $grey-80;
+        border-top: 1px solid $grey-80;
         margin-bottom: 8rem;
 
         .copy {
@@ -112,11 +112,10 @@
         }
       }
     }
-
   }
 
   .copyRightSection {
-    border-top:1px solid $grey-80;
+    border-top: 1px solid $grey-80;
     text-align: center;
     color: $grey-50;
     font-size: 1.4rem;
@@ -144,7 +143,7 @@
         height: 1.8rem;
         width: 1.8rem;
       }
-        
+
       &:hover {
         background-color: darken($grey-80, 10%);
         box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
@@ -152,12 +151,12 @@
       }
     }
 
-    .developerLink { 
+    .developerLink {
       text-decoration: underline;
     }
   }
 
-  @include media-query("sm", "up"){
+  @include media-query("sm", "up") {
     .footerWrapper {
       grid-template-columns: repeat(2, 1fr);
 
@@ -167,7 +166,7 @@
     }
   }
 
-  @include media-query("md", "up"){      
+  @include media-query("md", "up") {
     .quickLinksSection {
       border-left: 1px solid $grey-80;
     }
@@ -177,12 +176,13 @@
     }
   }
 
-  @include media-query("lg", "up"){
+  @include media-query("lg", "up") {
     .footerWrapper {
       grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
 
       .quickLinksSection {
         border-right: 1px solid $grey-80;
+        align-content: start;
       }
 
       .contactSection {
@@ -197,4 +197,3 @@
     }
   }
 }
-

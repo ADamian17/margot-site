@@ -1,12 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-
 import Container from '@/components/ui/Container'
 
 import styles from './MainFooter.module.scss'
+import SocialMediaIcons from '@/components/SocialMediaIcons'
 
-const MainFooter: React.FC = (props) => {
+type MainFooterProps = {
+  pathname: string
+}
+
+const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
   const year = new Date().getFullYear()
 
   return (
@@ -29,40 +33,7 @@ const MainFooter: React.FC = (props) => {
                 <p>DRE 02145679</p>
               </div>
 
-              <div className={styles.socialMediaIcons}>
-                <Link
-                  className={styles.socialMediaLink}
-                  href='/https://www.linkedin.com/in/margot-martin-realtor'
-                  rel="nofollow"
-                  target='_blank'
-                >
-                  <svg className={styles.socialMediaIcon}>
-                    <use href='/icons/social-media-defs.svg#linkedin' />
-                  </svg>
-                </Link>
-
-                <Link
-                  className={styles.socialMediaLink}
-                  href='https://www.instagram.com/margotmartinthebay'
-                  rel="nofollow"
-                  target='_blank'
-                >
-                  <svg className={styles.socialMediaIcon}>
-                    <use href='/icons/social-media-defs.svg#instagram' />
-                  </svg>
-                </Link>
-
-                <Link
-                  rel="nofollow"
-                  className={styles.socialMediaLink}
-                  href='https://www.grubbco.com/agent-profile/margot-martin-109779059'
-                  target='_blank'
-                >
-                  <svg className={styles.socialMediaIcon}>
-                    <use href='/icons/social-media-defs.svg#airplay' />
-                  </svg>
-                </Link>
-              </div>
+              <SocialMediaIcons />
             </section>
 
             <section className={styles.quickLinksSection}>
@@ -107,7 +78,10 @@ const MainFooter: React.FC = (props) => {
 
           </div>
           <section className={styles.copyRightSection}>
-            <Link href='/#top-nav' className={styles.toTop}>
+            <Link
+              href={`${pathname}#top-nav`}
+              className={styles.toTop}
+            >
               <svg>
                 <use href='/icons/icons-defs.svg#chevrons-up' />
               </svg>

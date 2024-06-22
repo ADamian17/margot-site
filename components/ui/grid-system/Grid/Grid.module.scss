@@ -11,12 +11,9 @@
 
   @include media-query("lg", "up") {
     grid-template-columns: set-inner-columns(12);
-    justify-self: center;
-    max-width: 111rem;
-    width: 100%;
   }
 
-  @include media-query("xl", "up") {
-    width: 111rem;
-  }
+  // @include media-query("xl", "up") {
+  //   // width: 111rem;
+  // }
 }
