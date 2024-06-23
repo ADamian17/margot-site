@@ -10,7 +10,13 @@ import SocialMediaIcons from '@/components/SocialMediaIcons'
 import styles from './MainFooter.module.scss'
 import FooterContactSectionContainer from '@/containers/FooterContactSectionContainer'
 
-const MainFooter = () => {
+import { builder } from '@builder.io/sdk'
+import FooterContactSection from '@/components/FooterContactSection'
+
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+
+const MainFooter = async () => {
+  const res = await builder.get('footer').promise()
   const year = new Date().getFullYear()
 
   return (
@@ -50,7 +56,7 @@ const MainFooter = () => {
               </ul>
             </section>
 
-            <FooterContactSectionContainer />
+            <FooterContactSection data={res?.data?.contactSection} />
           </Grid.Col>
 
           <Grid.Col span={12}>

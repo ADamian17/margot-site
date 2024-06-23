@@ -1,0 +1,58 @@
+@use "abstracts" as *;
+
+.contactSection {
+  display: grid;
+  row-gap: 2.4rem;
+  justify-content: center;
+  text-align: center;
+
+  .contactTitle {
+    @extend %heading;
+
+    margin: 1rem 0 2rem;
+  }
+
+  .contactSectionImage {
+    display: inline-block;
+    width: 100%;
+    height: 38.3rem;
+  }
+
+  .contactSectionCopy {
+    display: inline-block;
+    border-top: 1px solid $grey-80;
+    margin-bottom: 8rem;
+
+    .copy {
+      display: grid;
+      row-gap: 1.4rem;
+      justify-content: center;
+      font-size: 1.4rem;
+
+      .dreCopy {
+        border-bottom: 1px solid $grey-80;
+        width: fit-content;
+        text-align: center;
+        justify-self: center;
+      }
+    }
+  }
+
+  @include media-query("sm", "up") {
+    grid-column: 1 / -1;
+  }
+
+  @include media-query("lg", "up") {
+    grid-column: initial;
+    justify-items: center;
+
+    .contactSectionImage {
+      width: 22.2rem;
+      height: 27.7rem;
+    }
+
+    .contactTitle {
+      max-width: 22rem;
+    }
+  }
+}
