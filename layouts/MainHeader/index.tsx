@@ -22,7 +22,7 @@ const MainHeader = () => {
     );
 
 
-    const currentSentinelRef = sentinelRef.current;
+    const currentSentinelRef = document.getElementById("sentinel");
 
     if (currentSentinelRef) {
       observer.observe(currentSentinelRef);
@@ -36,26 +36,23 @@ const MainHeader = () => {
   }, []);
 
   return (
-    <>
-      <div ref={sentinelRef} />
-      <header ref={headerRef} className={`${styles.header} ${isSticky && styles.sticky}`}>
-        <Link href='/' className={styles.logo}>
-          <Image
-            src='/icons/dark-logo.svg'
-            alt='margot logo'
-            width={200}
-            height={40}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </Link>
+    <header ref={headerRef} className={`${styles.header} ${isSticky && styles.sticky}`}>
+      <Link href='/' className={styles.logo}>
+        <Image
+          src='/icons/dark-logo.svg'
+          alt='margot logo'
+          width={200}
+          height={40}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </Link>
 
-        <nav className={styles.nav}>
-          <Link className={styles.navLink} href="/about-me">about</Link>
-          <Link className={styles.navLink} href="/listings">Before & After</Link>
-          <Link className={styles.navLink} href="/contact-me">contact</Link>
-        </nav>
-      </header>
-    </>
+      <nav className={styles.nav}>
+        <Link className={styles.navLink} href="/about-me">about</Link>
+        <Link className={styles.navLink} href="/listings">Before & After</Link>
+        <Link className={styles.navLink} href="/contact-me">contact</Link>
+      </nav>
+    </header>
   )
 }
 
