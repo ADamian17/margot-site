@@ -1,0 +1,13 @@
+.wrapper {
+  text-align: initial;
+  display: grid;
+  row-gap: 0.5rem;
+
+  .inputLabel {
+    padding-left: 0.3rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}

@@ -1,12 +1,12 @@
 import React from "react";
 
 import ContactForm from "../ContactForm";
-import Container from "../ui/Container";
-import Grid from "../ui/grid-system/Grid";
+import Container from "@/ui/Container";
+import DreAndEmail from "../DreAndEmail";
+import Grid from "@/ui/grid-system/Grid";
 import SocialMediaIcons from "../SocialMediaIcons";
 
 import styles from "./SectionContactForm.module.scss";
-import DreAndEmail from "../DreAndEmail";
 
 type ContactFormType = {};
 
@@ -20,7 +20,7 @@ const SectionContactForm: React.FC<ContactFormType> = (props) => {
         >
           <div className={styles.topSection}>
             <p className={styles.heading}>Let&apos;s Connect</p>
-            <p className={styles.phoneNumber}>(203) 644 6117</p>
+            <p className={styles.phoneNumber}>203.644.6117</p>
           </div>
 
           <DreAndEmail withEmail />

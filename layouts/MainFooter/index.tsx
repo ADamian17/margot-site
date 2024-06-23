@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Container from '@/components/ui/Container'
+
+import Container from '@/ui/Container'
+import DreAndEmail from '@/components/DreAndEmail'
+import Grid from '@/ui/grid-system/Grid'
+import SocialMediaIcons from '@/components/SocialMediaIcons'
 
 import styles from './MainFooter.module.scss'
-import SocialMediaIcons from '@/components/SocialMediaIcons'
-import Grid from '@/components/ui/grid-system/Grid'
-import DreAndEmail from '@/components/DreAndEmail'
 
 type MainFooterProps = {
   pathname: string
@@ -64,7 +65,7 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
 
                 <ul className={styles.copy}>
                   <li>
-                    <p>(203) 644 6117</p>
+                    <p>203.644.6117</p>
                   </li>
                   <li>
                     <DreAndEmail withEmail />
