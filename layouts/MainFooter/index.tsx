@@ -55,8 +55,10 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
 
             <section className={styles.contactSection}>
               <Image
-                src={''}
+                src={'https://cdn.builder.io/api/v1/image/assets%2F612ce6d4821343dfb8b2cf8ce7882b57%2Ff343ca6f3e294ae088c42360c1edc1cb'}
                 alt={'Margot Image'}
+                width={200}
+                height={200}
                 className={styles.contactSectionImage}
               />
 

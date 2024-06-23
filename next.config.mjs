@@ -7,7 +7,7 @@ const nextConfig = {
     includePaths: ["styles"],
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    domains: ["images.ctfassets.net", "cdn.builder.io"],
     minimumCacheTTL: 1500000,
   },
 };
