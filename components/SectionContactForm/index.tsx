@@ -37,7 +37,7 @@ const SectionContactForm: React.FC<ContactFormType> = (props) => {
         >
           <div className={styles.copySection}>
             <p className={styles.heading}>contact form</p>
-            <p className={styles.subcopy}>I&apos;d love to here from you. </p>
+            <p className={styles.subcopy}>I&apos;d love to hear from you. </p>
           </div>
 
           <ContactForm />

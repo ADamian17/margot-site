@@ -27,7 +27,7 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
                   src='/icons/dark-logo.svg'
                   alt='margot logo'
                   width={200}
-                  height={75}
+                  height={40}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </Link>
@@ -77,7 +77,7 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
 
           <Grid.Col span={12}>
             <section className={styles.copyRightSection}>
-              <Link
+              {/* <Link
                 href={`${pathname}#top-nav`}
                 className={styles.toTop}
               >
@@ -86,7 +86,7 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
                 </svg>
 
                 <span>to top</span>
-              </Link>
+              </Link> */}
 
               <p className={styles.copy}>
                 &copy; {year} Margot Martin | All rights reserved | Made by{' '}
