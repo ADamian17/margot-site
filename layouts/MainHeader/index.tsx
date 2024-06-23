@@ -1,3 +1,4 @@
+"use client";
 import React, { ElementRef, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -43,7 +44,6 @@ const MainHeader = () => {
           alt='margot logo'
           width={200}
           height={40}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </Link>
 

@@ -4,6 +4,7 @@
   padding: 2.4rem;
   background-color: $white;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
@@ -15,6 +16,7 @@
 
   .logo {
     margin-right: auto;
+    display: none;
   }
 
   .nav {
@@ -23,6 +25,7 @@
     column-gap: 2.7rem;
 
     .navLink {
+      text-decoration: underline;
       font-size: calc(
         1.4rem + (20 - 14) * ((100vw - 300px) / (1600 - 300))
       ); // Responsive font size
@@ -47,6 +50,18 @@
         &::before {
           width: 100%;
         }
+      }
+    }
+  }
+
+  @include media-query("md", "up") {
+    .logo {
+      display: block;
+    }
+
+    .nav {
+      .navLink {
+        text-decoration: none;
       }
     }
   }

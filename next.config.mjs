@@ -9,6 +9,7 @@ const nextConfig = BuilderDevTools()({
   images: {
     domains: ["images.ctfassets.net", "cdn.builder.io"],
     minimumCacheTTL: 1500000,
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 });
 

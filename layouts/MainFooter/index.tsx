@@ -8,12 +8,9 @@ import Grid from '@/ui/grid-system/Grid'
 import SocialMediaIcons from '@/components/SocialMediaIcons'
 
 import styles from './MainFooter.module.scss'
+import FooterContactSectionContainer from '@/containers/FooterContactSectionContainer'
 
-type MainFooterProps = {
-  pathname: string
-}
-
-const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
+const MainFooter = () => {
   const year = new Date().getFullYear()
 
   return (
@@ -53,43 +50,11 @@ const MainFooter: React.FC<MainFooterProps> = ({ pathname }) => {
               </ul>
             </section>
 
-            <section className={styles.contactSection}>
-              <Image
-                src={'https://cdn.builder.io/api/v1/image/assets%2F612ce6d4821343dfb8b2cf8ce7882b57%2Ff343ca6f3e294ae088c42360c1edc1cb'}
-                alt={'Margot Image'}
-                width={200}
-                height={200}
-                className={styles.contactSectionImage}
-              />
-
-              <div className={styles.contactSectionCopy}>
-                <h2 className={styles.contactTitle}>contact margot</h2>
-
-                <ul className={styles.copy}>
-                  <li>
-                    <p>203.644.6117</p>
-                  </li>
-                  <li>
-                    <DreAndEmail withEmail />
-                  </li>
-                </ul>
-              </div>
-            </section>
+            <FooterContactSectionContainer />
           </Grid.Col>
 
           <Grid.Col span={12}>
             <section className={styles.copyRightSection}>
-              {/* <Link
-                href={`${pathname}#top-nav`}
-                className={styles.toTop}
-              >
-                <svg>
-                  <use href='/icons/icons-defs.svg#chevrons-up' />
-                </svg>
-
-                <span>to top</span>
-              </Link> */}
-
               <p className={styles.copy}>
                 &copy; {year} Margot Martin | All rights reserved | Made by{' '}
 

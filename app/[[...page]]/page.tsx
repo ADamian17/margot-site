@@ -1,7 +1,9 @@
+import { cache } from "react";
 import { ResolvingMetadata, Metadata } from "next";
 import { builder } from "@builder.io/sdk";
+
 import { RenderBuilderContent } from "../../components/builder";
-import { cache } from "react";
+import MainLayout from "@/layouts/MainLayout";
 
 // Builder Public API Key set in .env file
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -26,10 +28,14 @@ const getPageContent = cache(async (pageModelName: string, urlPath: string) => {
 const builderModelName = "page";
 
 export default async function Page(props: PageProps) {
-
+  const urlPath = `/${(props?.params?.page?.join("/") || "")}`;
   const content = await getPageContent(builderModelName, `/${(props?.params?.page?.join("/") || "")}`)
 
-  return <RenderBuilderContent content={content} model={builderModelName} />
+  return (
+    <MainLayout pathname={urlPath}>
+      <RenderBuilderContent content={content} model={builderModelName} />
+    </MainLayout>
+  )
 }
 
 export async function generateMetadata(

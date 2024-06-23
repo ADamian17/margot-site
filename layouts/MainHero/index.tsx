@@ -1,55 +1,36 @@
 import React from 'react'
-import { Builder } from "@builder.io/react";
+import { builder } from '@builder.io/sdk'
 
 type MainHeroProps = {
-  subtitle: string;
-  title: string;
-  videoUrl: string;
+  pathname: string;
 }
 
-const MainHero: React.FC<MainHeroProps> = ({
-  subtitle,
-  title,
-  videoUrl,
-}) => (
-  <div className="hero">
-    <video
-      autoPlay
-      className="hero-video"
-      loop
-      muted
-    >
-      <source src={videoUrl} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div className="hero-overlay">
-      <h1>{title}</h1>
-      <p>{subtitle}</p>
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+
+const MainHero: React.FC<MainHeroProps> = async ({ pathname }) => {
+  const res = await builder.get('hero', {
+    userAttributes: {
+      urlPath: pathname,
+    },
+  }).promise()
+
+  return (
+    <div className="hero">
+      <video
+        autoPlay
+        className="hero-video"
+        loop
+        muted
+      >
+        <source src={res?.data?.videoUrl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="hero-overlay">
+        <h1>{res?.data?.title}</h1>
+        <p>{res?.data?.subtitle}</p>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default MainHero
-
-export const registerMainHero = () => {
-  Builder.registerComponent(MainHero, {
-    name: "MainHero",
-    inputs: [
-      {
-        name: "videoUrl",
-        type: "file",
-        defaultValue: "",
-      },
-      {
-        name: "title",
-        type: "string",
-        defaultValue: "",
-      },
-      {
-        name: "subtitle",
-        type: "string",
-        defaultValue: "",
-      },
-    ],
-  });
-}

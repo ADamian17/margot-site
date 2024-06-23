@@ -2,15 +2,17 @@ import React from 'react'
 
 import MainFooter from '../MainFooter'
 import MainHeader from '../MainHeader'
+import MainHero from '../MainHero'
 
 type MainLayoutProps = {
   children: React.ReactNode
-  builderState: Record<string, any>
+  pathname: string
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children, builderState, ...rest }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children, pathname }) => {
   return (
     <>
+      <MainHero pathname={pathname} />
       <div id='sentinel' />
       <MainHeader />
 
@@ -18,7 +20,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, builderState, ...rest
         {children}
       </main>
 
-      <MainFooter pathname={builderState?.state?.location?.pathname || '/'} />
+      <MainFooter />
     </>
   )
 }
