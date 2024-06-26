@@ -1,0 +1,32 @@
+@use "abstracts" as *;
+
+.quickLinksSection {
+  display: grid;
+  grid-auto-rows: min-content;
+  align-content: center;
+  row-gap: 1.4rem;
+  text-align: center;
+  text-transform: capitalize;
+
+  .quickLinksTitle {
+    font-size: 2rem;
+  }
+
+  .linksSection {
+    display: grid;
+    grid-auto-rows: min-content;
+    justify-items: center;
+    row-gap: 1.4rem;
+    text-decoration: underline;
+    font-size: 1.8rem;
+  }
+
+  @include media-query("md", "up") {
+    border-left: 1px solid $grey-80;
+  }
+
+  @include media-query("lg", "up") {
+    border-right: 1px solid $grey-80;
+    align-content: start;
+  }
+}
