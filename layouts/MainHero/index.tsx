@@ -1,5 +1,10 @@
 import React from 'react'
+import Link from 'next/link';
 import { builder } from '@builder.io/sdk'
+
+import { jost } from '@/assets/fonts';
+
+import styles from './MainHero.module.scss'
 
 type MainHeroProps = {
   pathname: string;
@@ -15,21 +20,28 @@ const MainHero: React.FC<MainHeroProps> = async ({ pathname }) => {
   }).promise()
 
   return (
-    <div className="hero">
+    <section className={styles.hero}>
       <video
         autoPlay
-        className="hero-video"
+        className={styles.heroVideo}
         loop
         muted
       >
         <source src={res?.data?.videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="hero-overlay">
-        <h1>{res?.data?.title}</h1>
-        <p>{res?.data?.subtitle}</p>
+
+      <div className={styles.heroOverlay}>
+        <h1 className={`${styles.headline} ${jost.className}`}>{res?.data?.title}</h1>
+        <p className={`${styles.subcopy} ${jost.className}`}>{res?.data?.subtitle}</p>
+
+        <Link href={`${pathname}#sentinel`} className={styles.cta}>
+          <svg>
+            <use href="/icons/icons-defs.svg#chevron-with-circle-down" />
+          </svg>
+        </Link>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -10,7 +10,6 @@ import styles from './MainHeader.module.scss'
 const MainHeader = () => {
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef<ElementRef<"header">>(null);
-  const sentinelRef = useRef<ElementRef<"div">>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

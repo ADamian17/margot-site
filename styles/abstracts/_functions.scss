@@ -1,5 +1,5 @@
-@use 'sass:map';
-@use './bp-variables' as *;
+@use "sass:map";
+@use "./bp-variables" as *;
 
 @function get-bp($bp) {
   @return map.get($break-points, $bp);
@@ -16,4 +16,10 @@
 
 @function set-inner-columns($cols: 4, $cols-size: 1fr) {
   @return [ center-start] repeat($cols, $cols-size) [ center-end];
+}
+
+@function responsiveFontSize($base-size: 1.4, $min-vw: 300, $max-vw: 1600) {
+  @return calc(
+    #{$base-size}rem + (60 - 14) * ((100vw - #{$min-vw}px) / ($max-vw - 300))
+  );
 }

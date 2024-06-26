@@ -1,0 +1,73 @@
+@use "abstracts" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 90vh; /* Half viewport height */
+  display: grid;
+
+  .heroVideo,
+  .heroOverlay {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .heroVideo {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .heroOverlay {
+    z-index: 2;
+    display: grid;
+    grid-auto-rows: min-content;
+    place-content: center;
+    justify-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    row-gap: 3rem;
+
+    .headline {
+      color: $white;
+      font-size: responsiveFontSize();
+      letter-spacing: 20px;
+      line-height: 72px;
+      mix-blend-mode: normal;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-bottom: $white 2px solid;
+      padding-bottom: 2.7rem;
+    }
+
+    .subcopy {
+      color: $white;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px rgba(169, 137, 102, 0.7);
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 50px;
+    }
+
+    .cta {
+      width: 4.8rem;
+      height: 4.8rem;
+
+      svg {
+        fill: currentColor;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @include media-query("md", "up") {
+    height: 100vh; /* Full viewport height */
+  }
+}

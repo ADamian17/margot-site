@@ -6,7 +6,7 @@ import styles from "./FooterNavLinkSection.module.scss";
 type FooterNavLinkSectionProps = {
   data: {
     headline: string;
-    navLinks: Array<Record<"navLink", BuilderMenuLinksData>>
+    navLinks: Array<Record<"navLink", Record<"urlPath" | "urlText", string>>>
   };
 };
 
