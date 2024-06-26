@@ -1,17 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { builder } from '@builder.io/sdk'
 
 import Container from '@/ui/Container'
-import DreAndEmail from '@/components/DreAndEmail'
+import FooterContactSection from '@/components/FooterContactSection'
+import FooterNavLinkSection from '@/components/FooterNavLinkSection'
+import FooterSocialMediaSection from '@/components/FooterSocialMediaSection'
 import Grid from '@/ui/grid-system/Grid'
-import SocialMediaIcons from '@/components/SocialMediaIcons'
 
 import styles from './MainFooter.module.scss'
-import FooterContactSectionContainer from '@/containers/FooterContactSectionContainer'
 
-import { builder } from '@builder.io/sdk'
-import FooterContactSection from '@/components/FooterContactSection'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -24,37 +22,9 @@ const MainFooter = async () => {
       <Container isCentered>
         <Grid>
           <Grid.Col span={12} className={styles.footerWrapper}>
-            <section className={styles.socialMediaSection}>
-              <Link href='/'>
-                <Image
-                  src='/icons/dark-logo.svg'
-                  alt='margot logo'
-                  width={200}
-                  height={40}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </Link>
+            <FooterSocialMediaSection data={res?.data?.footerSocialMediaSection} />
 
-              <DreAndEmail />
-
-              <SocialMediaIcons />
-            </section>
-
-            <section className={styles.quickLinksSection}>
-              <h3 className={styles.quickLinksTitle}>quick links</h3>
-
-              <ul className={styles.linksSection}>
-                <li>
-                  <Link href="/about-me">about me</Link>
-                </li>
-                <li>
-                  <Link href="/contact-me">contact me</Link>
-                </li>
-                <li>
-                  <Link href="/listings">Gallery of listings</Link>
-                </li>
-              </ul>
-            </section>
+            <FooterNavLinkSection data={res?.data?.footerNavLinksSection} />
 
             <FooterContactSection data={res?.data?.contactSection} />
           </Grid.Col>

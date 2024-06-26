@@ -42,9 +42,9 @@
   padding: 1rem 1.4rem;
   width: 100%;
   color: inherit;
-  text-transform: capitalize;
 
   &::placeholder {
+    text-transform: capitalize;
     font-size: small;
   }
 }

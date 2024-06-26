@@ -7,9 +7,15 @@ const nextConfig = BuilderDevTools()({
     includePaths: ["styles"],
   },
   images: {
-    domains: ["images.ctfassets.net", "cdn.builder.io"],
+    remotePatterns: [
+      {
+        hostname: "images.ctfassets.net",
+      },
+      {
+        hostname: "cdn.builder.io",
+      },
+    ],
     minimumCacheTTL: 1500000,
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 });
 

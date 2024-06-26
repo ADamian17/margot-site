@@ -3,14 +3,14 @@ import Link from "next/link";
 
 import styles from "./FooterNavLinkSection.module.scss";
 
-type FooterContactSectionProps = {
+type FooterNavLinkSectionProps = {
   data: {
     headline: string;
     navLinks: Array<Record<"navLink", BuilderMenuLinksData>>
   };
 };
 
-const FooterNavLinkSection: React.FC<FooterContactSectionProps> = ({ data }) => {
+const FooterNavLinkSection: React.FC<FooterNavLinkSectionProps> = ({ data }) => {
   const navLinks = data.navLinks.map(item => (
     <li key={item?.navLink?.urlText}>
       <Link href={item?.navLink?.urlPath ?? ''}>{item?.navLink?.urlText}</Link>
