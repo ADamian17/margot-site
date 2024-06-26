@@ -1,0 +1,51 @@
+@use "abstracts" as *;
+
+.socialMediaSection {
+  align-items: start;
+  display: grid;
+  grid-auto-rows: min-content;
+  justify-items: center;
+  padding: 2.4rem 0;
+  row-gap: 2.4rem;
+
+  .logo {
+    display: inline-block;
+    width: 100%;
+    height: 6.7rem;
+    object-fit: cover;
+    object-position: center;
+
+    .logoImg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .dreSection {
+    font-size: 1.4rem;
+    color: $grey-50;
+  }
+
+  .socialMediaIcons {
+    display: flex;
+    column-gap: 2.4rem;
+    align-items: center;
+  }
+
+  .socialMediaLink {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-content: center;
+  }
+
+  .socialMediaIcon {
+    width: 100%;
+    height: 100%;
+    fill: $grey-50;
+  }
+
+  @include media-query("sm", "up") {
+    padding: 0 2.4rem;
+  }
+}
