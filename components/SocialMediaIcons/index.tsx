@@ -9,7 +9,7 @@ const SocialMediaIcons: React.FC<SocialMediaIconsType> = (props) => (
   <div className={styles.socialMediaIcons}>
     <Link
       className={styles.socialMediaLink}
-      href='/https://www.linkedin.com/in/margot-martin-realtor'
+      href='https://www.linkedin.com/in/margot-martin-realtor'
       rel="nofollow"
       target='_blank'
     >

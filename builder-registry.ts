@@ -4,6 +4,7 @@ import { builder, Builder } from "@builder.io/react";
 import ContactForm from "@/components/ContactForm";
 import SectionContactForm from "@/components/SectionContactForm";
 import AboutMeSection from "@/components/AboutMeSection";
+import FeaturedReviews from "@/components/FeaturedReviews";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -60,4 +61,8 @@ Builder.registerComponent(AboutMeSection, {
       ],
     },
   ],
+});
+
+Builder.registerComponent(FeaturedReviews, {
+  name: "FeaturedReviews",
 });
