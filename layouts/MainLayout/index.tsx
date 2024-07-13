@@ -14,8 +14,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, pathname }) => (
     <div id='sentinel' />
     <MainHeader />
     <MainHero pathname={pathname} />
-
-    <main id='main-content'>
+    <div id='main-content' />
+    <main>
       {children}
     </main>
 
