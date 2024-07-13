@@ -2,8 +2,6 @@
 import React, { ElementRef, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { fromEvent } from 'rxjs';
-import { map, throttleTime } from 'rxjs/operators';
 
 import styles from './MainHeader.module.scss'
 
@@ -18,7 +16,7 @@ const MainHeader = () => {
           setIsSticky(!entry.isIntersecting);
         }
       },
-      { threshold: [1] }
+      { threshold: [1], rootMargin: "200px" }
     );
 
 

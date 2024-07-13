@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 90vh; /* Half viewport height */
+  height: 90vh;
   display: grid;
 
   .heroVideo,
@@ -68,6 +68,6 @@
   }
 
   @include media-query("md", "up") {
-    height: 100vh; /* Full viewport height */
+    height: calc(100vh - 44px);
   }
 }

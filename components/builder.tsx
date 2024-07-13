@@ -1,9 +1,9 @@
 "use client";
 import { ComponentProps } from "react";
 import { BuilderComponent, useIsPreviewing } from "@builder.io/react";
-import { BuilderContent, builder } from "@builder.io/sdk";
-import DefaultErrorPage from "next/error";
+import { builder } from "@builder.io/sdk";
 import "../builder-registry";
+import { notFound } from "next/navigation";
 
 type BuilderPageProps = ComponentProps<typeof BuilderComponent>;
 
@@ -22,5 +22,5 @@ export function RenderBuilderContent({ content, model }: BuilderPageProps) {
   // If the "content" is falsy and the page is
   // not being previewed in Builder, render the
   // DefaultErrorPage with a 404.
-  return <DefaultErrorPage statusCode={404} />;
+  return notFound();
 }

@@ -9,20 +9,18 @@ type MainLayoutProps = {
   pathname: string
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children, pathname }) => {
-  return (
-    <>
-      <MainHero pathname={pathname} />
-      <div id='sentinel' />
-      <MainHeader />
+const MainLayout: React.FC<MainLayoutProps> = ({ children, pathname }) => (
+  <>
+    <div id='sentinel' />
+    <MainHeader />
+    <MainHero pathname={pathname} />
 
-      <main>
-        {children}
-      </main>
+    <main id='main-content'>
+      {children}
+    </main>
 
-      <MainFooter />
-    </>
-  )
-}
+    <MainFooter />
+  </>
+)
 
 export default MainLayout

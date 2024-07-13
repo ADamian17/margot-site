@@ -35,7 +35,7 @@ const MainHero: React.FC<MainHeroProps> = async ({ pathname }) => {
         <h1 className={`${styles.headline} ${jost.className}`}>{res?.data?.title}</h1>
         <p className={`${styles.subcopy} ${jost.className}`}>{res?.data?.subtitle}</p>
 
-        <Link href={`${pathname}#sentinel`} className={styles.cta}>
+        <Link href={`${pathname}#main-content`} className={styles.cta}>
           <svg>
             <use href="/icons/icons-defs.svg#chevron-with-circle-down" />
           </svg>
