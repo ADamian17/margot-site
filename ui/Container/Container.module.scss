@@ -5,7 +5,7 @@
 
   &.isCentered {
     > * {
-      @extend .innerColsCentered;
+      grid-column: center-start / center-end;
     }
   }
 
@@ -15,19 +15,13 @@
     }
   }
 
-  .fullWidth {
-    grid-column: full-start / full-end;
-  }
-
-  .centered {
-    @extend .innerColsCentered;
-
-    > * {
-      grid-column: 1 / -1;
-    }
-  }
-
   .noGap {
     gap: 0;
+  }
+
+  @include media-query("xl", "up") {
+    &.isCentered > * {
+      width: 111rem;
+    }
   }
 }

@@ -28,6 +28,10 @@ const AboutMeSection: React.FC<AboutMeSectionType> = ({ headline, copy, ctaLink,
           </div>
 
           <div dangerouslySetInnerHTML={{ __html: copy }} className={styles.copyWrapper} />
+
+          <Link href={ctaLink} className={styles.cta}>
+            {ctaText}
+          </Link>
         </div>
 
         <div className={styles.imgWrapper}>
