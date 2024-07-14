@@ -2,6 +2,7 @@
 
 .container {
   @include main-layout;
+  overflow: hidden;
 
   &.isCentered {
     > * {

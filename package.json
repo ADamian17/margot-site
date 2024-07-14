@@ -13,12 +13,14 @@
     "@builder.io/dev-tools": "^1.0.14",
     "@builder.io/react": "^3.2.7",
     "@builder.io/sdk": "^2.2.3",
+    "@mantine/carousel": "^7.11.2",
+    "@mantine/core": "^7.11.2",
+    "@mantine/hooks": "^7.11.2",
+    "embla-carousel-react": "^7.1.0",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-slick": "^0.30.2",
-    "rxjs": "^7.8.1",
-    "slick-carousel": "^1.8.1"
+    "rxjs": "^7.8.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",

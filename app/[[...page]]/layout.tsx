@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
+import { createTheme, MantineProvider } from '@mantine/core';
 
+import '@mantine/core/styles.css';
 import "@/styles/main.scss";
 
 const mulish = Mulish({ subsets: ["latin"] });
+
+const theme = createTheme({});
 
 export const metadata: Metadata = {
   title: "Margot Martin - Realtor",
@@ -53,7 +57,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mulish.className}>
-        {children}
+        <MantineProvider theme={theme}>
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );

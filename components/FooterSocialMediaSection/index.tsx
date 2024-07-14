@@ -17,7 +17,7 @@ const FooterSocialMediaSection: React.FC<FooterSocialMediaSectionProps> = ({ dat
     <section className={styles.socialMediaSection}>
       <Link href='/' className={styles.logo}>
         <svg className={styles.logoImg}>
-          <use href="/icons/main-logos-defs.svg#maim-logo"></use>
+          <use href="/icons/logos-defs.svg#margot-logo"></use>
         </svg>
       </Link>
 

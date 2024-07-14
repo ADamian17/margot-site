@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import SectionContactForm from "@/components/SectionContactForm";
 import AboutMeSection from "@/components/AboutMeSection";
 import FeaturedReviews from "@/components/FeaturedReviews";
+import BeforeAndAfterGallery from "./components/BeforeAndAfterGallery";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -65,4 +66,33 @@ Builder.registerComponent(AboutMeSection, {
 
 Builder.registerComponent(FeaturedReviews, {
   name: "FeaturedReviews",
+});
+
+Builder.registerComponent(BeforeAndAfterGallery, {
+  name: "BeforeAndAfterGallery",
+  inputs: [
+    {
+      type: "list",
+      name: "images",
+      defaultValue: [],
+      subFields: [
+        {
+          type: "object",
+          name: "image",
+          subFields: [
+            {
+              type: "file",
+              name: "src",
+              defaultValue: "",
+            },
+            {
+              type: "string",
+              name: "alt",
+              defaultValue: "",
+            },
+          ],
+        },
+      ],
+    },
+  ],
 });
