@@ -40,3 +40,12 @@ textarea {
   line-height: 2.6rem;
   max-width: 100%;
 }
+
+button[data-active] {
+  width: 40px;
+}
+
+button.mantine-Carousel-control {
+  width: 3rem;
+  height: 3rem;
+}

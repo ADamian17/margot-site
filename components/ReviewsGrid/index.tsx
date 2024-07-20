@@ -5,6 +5,8 @@ import Container from "@/ui/Container";
 import { Group, SimpleGrid, Space, Text, Title } from "@mantine/core";
 const ReviewCard = dynamic(() => import('../ReviewCard'), { ssr: false });
 
+import styles from './ReviewsGrid.module.scss';
+
 type ReviewsGridType = {
   headline: string;
   subcopy: string;
@@ -20,7 +22,7 @@ const ReviewsGrid: React.FC<ReviewsGridType> = ({ reviews, headline, subcopy }) 
   return (
     <Container isCentered>
       <Group align="center" mb={200} justify="center">
-        <Title order={2} size="h1" style={{ textTransform: "uppercase", letterSpacing: 8 }}>{headline}</Title>
+        <h2 className={styles.headline}>{headline}</h2>
         <Space h="md" />
         <Text size="md" c="dimmed" style={{ textAlign: "center" }}>{subcopy}</Text>
       </Group>

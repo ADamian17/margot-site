@@ -35,7 +35,7 @@
     .headline {
       color: $white;
       font-size: 4rem;
-      letter-spacing: 20px;
+      letter-spacing: 6px;
       line-height: 72px;
       mix-blend-mode: normal;
       text-transform: uppercase;
@@ -78,6 +78,7 @@
       .headline {
         font-size: 6rem;
         letter-spacing: 3rem;
+        letter-spacing: 2rem;
       }
     }
   }

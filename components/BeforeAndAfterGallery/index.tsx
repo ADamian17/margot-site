@@ -1,8 +1,9 @@
 import React from "react";
 import { Carousel } from '@mantine/carousel';
 import { Image } from '@mantine/core';
-
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import Container from "@/ui/Container";
+import { rem } from '@mantine/core';
 
 import styles from "./BeforeAndAfterGallery.module.scss";
 
