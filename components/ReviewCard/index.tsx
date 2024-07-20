@@ -1,39 +1,38 @@
 import React from "react";
+import Link from "next/link"
+  ;
+import { Rating, Card, Text, Title, Anchor, Group } from "@mantine/core";
+import { IconExternalLink } from '@tabler/icons-react';
 
-import styles from "./ReviewCard.module.scss";
+type ReviewCardType = {
+  name: string;
+  rating: number;
+  text: string;
+  link: string;
+};
 
-type ReviewCardType = {};
-
-const ReviewCard: React.FC<ReviewCardType> = (props) => {
+const ReviewCard: React.FC<ReviewCardType> = ({ name, rating = 0, text, link }) => {
   return (
-    <div className={styles.reviewCard}>
-      <div>
-        <h3 className={styles.headline}>Sarah Thompson</h3>
-        <p className={styles.subcopy}>produce-ui.com</p>
-      </div>
+    <Card shadow="sm" padding="xl" radius="lg" withBorder>
+      <Title mb="sm" order={2}>{name}</Title>
 
-      <div className={styles.ratings}>
-        <svg className={styles.star}>
-          <use href='/icons/logos-defs.svg#full-star' />
-        </svg>
-        <svg className={styles.star}>
-          <use href='/icons/logos-defs.svg#full-star' />
-        </svg>
-        <svg className={styles.star}>
-          <use href='/icons/logos-defs.svg#full-star' />
-        </svg>
-        <svg className={styles.star}>
-          <use href='/icons/logos-defs.svg#full-star' />
-        </svg>
-        <svg className={styles.star}>
-          <use href='/icons/logos-defs.svg#full-star' />
-        </svg>
-      </div>
+      <Rating value={rating} size="xl" readOnly mb="lg" />
 
-      <p className={styles.copy}>
-        Jeffery Cannon is an incredibly talented web designer. His attention to detail and creative flair are unmatched. He took my website from ordinary to extraordinary, capturing the essence of my brand perfectly. Working with Jeffery was a breeze, as he listened to my needs and provided expert guidance throughout the design process. I highly recommend Jeffery for anyone looking to elevate their online presence.
-      </p>
-    </div>
+      <Text
+        size="md"
+        c="dimmed"
+        mb="sm"
+        lineClamp={8}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+
+      <Anchor c="blue" href={link} component={Link} fw={500} target="_blank">
+        <Group gap="xs" align="center">
+          Read more
+          <IconExternalLink size={16} />
+        </Group>
+      </Anchor>
+    </Card>
   )
 };
 

@@ -7,6 +7,7 @@ import Grid from "@/ui/grid-system/Grid";
 import SocialMediaIcons from "../SocialMediaIcons";
 
 import styles from "./SectionContactForm.module.scss";
+import { Image, Space } from "@mantine/core";
 
 type ContactFormType = {};
 
@@ -26,8 +27,13 @@ const SectionContactForm: React.FC<ContactFormType> = (props) => {
           <DreAndEmail withEmail />
 
           <div className={styles.socialMedia}>
-            <p className={styles.heading}>social media</p>
             <SocialMediaIcons />
+          </div>
+
+          <Space h="lg" />
+
+          <div>
+            <Image src="https://cdn.builder.io/api/v1/image/assets%2F612ce6d4821343dfb8b2cf8ce7882b57%2F8f14549069a04378a5b427075303ce1b" width={100} height={400} alt="margot" />
           </div>
         </Grid.Col>
 

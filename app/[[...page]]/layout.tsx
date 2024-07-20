@@ -7,7 +7,28 @@ import "@/styles/main.scss";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
-const theme = createTheme({});
+const theme = createTheme({
+  white: "#fff",
+  black: "#333",
+  fontSizes: {
+    xs: "12px",
+    sm: "14px",
+    md: "16px",
+    lg: "18px",
+    xl: "20px",
+  },
+  headings: {
+    fontFamily: "inherit",
+    fontWeight: "inherit",
+    sizes: {
+      h1: {
+        fontSize: "48px",
+        lineHeight: "1.2",
+        fontWeight: "400",
+      },
+    }
+  },
+});
 
 export const metadata: Metadata = {
   title: "Margot Martin - Realtor",
@@ -57,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mulish.className}>
-        <MantineProvider theme={theme}>
+        <MantineProvider defaultColorScheme="light" theme={theme}>
           {children}
         </MantineProvider>
       </body>

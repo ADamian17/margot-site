@@ -22,7 +22,7 @@
   }
 
   .socialMedia {
-    margin-top: 7.5rem;
+    margin-top: 1rem;
     display: grid;
     place-items: center;
     row-gap: 2.6rem;
@@ -59,5 +59,6 @@
   .formContact {
     border-left: 1px solid $grey-80;
     padding-left: 8.5rem;
+    align-self: center;
   }
 }

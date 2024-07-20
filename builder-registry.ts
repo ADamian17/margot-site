@@ -6,6 +6,8 @@ import SectionContactForm from "@/components/SectionContactForm";
 import AboutMeSection from "@/components/AboutMeSection";
 import FeaturedReviews from "@/components/FeaturedReviews";
 import BeforeAndAfterGallery from "./components/BeforeAndAfterGallery";
+import ReviewCard from "./components/ReviewCard";
+import ReviewsGrid from "./components/ReviewsGrid";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -91,6 +93,49 @@ Builder.registerComponent(BeforeAndAfterGallery, {
               defaultValue: "",
             },
           ],
+        },
+      ],
+    },
+  ],
+});
+
+Builder.registerComponent(ReviewsGrid, {
+  name: "ReviewsGrid",
+  inputs: [
+    {
+      type: "string",
+      name: "headline",
+      defaultValue: "",
+    },
+    {
+      type: "string",
+      name: "subcopy",
+      defaultValue: "",
+    },
+    {
+      type: "list",
+      name: "reviews",
+      defaultValue: [],
+      subFields: [
+        {
+          type: "string",
+          name: "name",
+          defaultValue: "",
+        },
+        {
+          type: "number",
+          name: "rating",
+          defaultValue: 0,
+        },
+        {
+          type: "richText",
+          name: "text",
+          defaultValue: "",
+        },
+        {
+          type: "string",
+          name: "link",
+          defaultValue: "",
         },
       ],
     },

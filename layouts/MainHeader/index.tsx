@@ -47,6 +47,7 @@ const MainHeader = () => {
       <nav className={styles.nav}>
         <Link className={styles.navLink} href="/about-me">about</Link>
         <Link className={styles.navLink} href="/before-and-after">Before & After</Link>
+        <Link className={styles.navLink} href="/testimonials">Testimonials</Link>
         <Link className={styles.navLink} href="/contact-me">contact</Link>
       </nav>
     </header>
