@@ -23,22 +23,22 @@ const FeaturedReviews: React.FC<FeatureReviewsType> = (props) => {
         slidesToScroll={3}
       >
         <Carousel.Slide>
-          <ReviewCard />
+          <div></div>
         </Carousel.Slide>
         <Carousel.Slide>
-          <ReviewCard />
+          <div></div>
         </Carousel.Slide>
         <Carousel.Slide>
-          <ReviewCard />
+          <div></div>
         </Carousel.Slide>
         <Carousel.Slide>
-          <ReviewCard />
+          <div></div>
         </Carousel.Slide>
         <Carousel.Slide>
-          <ReviewCard />
+          <div></div>
         </Carousel.Slide>
         <Carousel.Slide>
-          <ReviewCard />
+          <div></div>
         </Carousel.Slide>
       </Carousel>
     </Container>

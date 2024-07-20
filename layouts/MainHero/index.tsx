@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { builder } from '@builder.io/sdk'
 
 import { jost } from '@/assets/fonts';
-
+import { IconCircleChevronDown } from '@tabler/icons-react';
 import styles from './MainHero.module.scss'
 
 type MainHeroProps = {
@@ -36,9 +36,7 @@ const MainHero: React.FC<MainHeroProps> = async ({ pathname }) => {
         <p className={`${styles.subcopy} ${jost.className}`}>{res?.data?.subtitle}</p>
 
         <Link href={`${pathname}#main-content`} className={styles.cta}>
-          <svg>
-            <use href="/icons/icons-defs.svg#chevron-with-circle-down" />
-          </svg>
+          <IconCircleChevronDown size={48} color='#fff' strokeWidth={1.5} />
         </Link>
       </div>
     </section>

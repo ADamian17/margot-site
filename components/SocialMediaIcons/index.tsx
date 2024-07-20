@@ -14,7 +14,7 @@ const SocialMediaIcons: React.FC<SocialMediaIconsType> = (props) => (
         rel="nofollow"
         target='_blank'
       >
-        <IconBrandLinkedin size={30} color="#808080" />
+        <IconBrandLinkedin size={30} color="#808080" strokeWidth={1.8} />
       </Anchor>
 
       <Anchor
@@ -23,7 +23,7 @@ const SocialMediaIcons: React.FC<SocialMediaIconsType> = (props) => (
         rel="nofollow"
         target='_blank'
       >
-        <IconBrandInstagram size={30} color="#808080" />
+        <IconBrandInstagram size={30} color="#808080" strokeWidth={1.8} />
       </Anchor>
 
       <Anchor
@@ -32,7 +32,7 @@ const SocialMediaIcons: React.FC<SocialMediaIconsType> = (props) => (
         rel="nofollow"
         target='_blank'
       >
-        <IconExternalLink size={30} color="#808080" />
+        <IconExternalLink size={30} color="#808080" strokeWidth={1.8} />
       </Anchor>
     </Group>
   </>
