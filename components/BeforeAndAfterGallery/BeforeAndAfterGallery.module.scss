@@ -1,0 +1,19 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+}
+
+.headline {
+  letter-spacing: 0.8rem;
+  text-transform: uppercase;
+  padding-top: 0.5rem;
+  font-size: 2.3rem;
+  font-weight: 400;
+  line-height: 5rem;
+  display: block;
+  text-align: center;
+}

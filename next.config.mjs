@@ -5,6 +5,7 @@ const nextConfig = BuilderDevTools()({
   trailingSlash: true,
   sassOptions: {
     includePaths: ["styles"],
+    prependData: `@use "vendors/_mantine.scss" as *;\n@use "abstracts" as *;`,
   },
   images: {
     remotePatterns: [

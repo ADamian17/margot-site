@@ -1,13 +1,12 @@
 "use client";
 import { builder, Builder } from "@builder.io/react";
 
-import ContactForm from "@/components/ContactForm";
-import SectionContactForm from "@/components/SectionContactForm";
 import AboutMeSection from "@/components/AboutMeSection";
-import FeaturedReviews from "@/components/FeaturedReviews";
 import BeforeAndAfterGallery from "./components/BeforeAndAfterGallery";
-import ReviewCard from "./components/ReviewCard";
+import ContactForm from "@/components/ContactForm";
+import FeaturedReviews from "@/components/FeaturedReviews";
 import ReviewsGrid from "./components/ReviewsGrid";
+import SectionContactForm from "@/components/SectionContactForm";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -73,6 +72,16 @@ Builder.registerComponent(FeaturedReviews, {
 Builder.registerComponent(BeforeAndAfterGallery, {
   name: "BeforeAndAfterGallery",
   inputs: [
+    {
+      type: "string",
+      name: "headline",
+      defaultValue: "",
+    },
+    {
+      type: "string",
+      name: "subcopy",
+      defaultValue: "",
+    },
     {
       type: "list",
       name: "images",

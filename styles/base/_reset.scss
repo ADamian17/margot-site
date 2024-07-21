@@ -41,11 +41,12 @@ textarea {
   max-width: 100%;
 }
 
-button[data-active] {
-  width: 40px;
+button[class*="indicator"] {
+  width: 1.2rem;
+  height: 4px;
+  transition: width 250ms ease;
 }
 
-button.mantine-Carousel-control {
-  width: 3rem;
-  height: 3rem;
+button[data-active] {
+  width: 40px;
 }
