@@ -6,16 +6,15 @@ import MainHero from '../MainHero'
 
 type MainLayoutProps = {
   children: React.ReactNode
-  pathname: string
+  Hero?: React.ReactNode
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children, pathname }) => (
+const MainLayout: React.FC<MainLayoutProps> = ({ children, Hero }) => (
   <>
     <div id='sentinel' />
     <MainHeader />
-    <MainHero pathname={pathname} />
-    <div id='main-content' />
-    <main>
+    {Hero}
+    <main id='main-content'>
       {children}
     </main>
 

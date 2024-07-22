@@ -1,25 +1,19 @@
+import MainHero from '@/layouts/MainHero'
 import MainLayout from '@/layouts/MainLayout'
 import Container from '@/ui/Container'
-import Grid from '@/ui/grid-system/Grid'
+import { notFoundHero } from '@/utils/constants'
+import { Button, Center, Title } from '@mantine/core'
 import Link from 'next/link'
 
 
 
 export default function NotFound() {
   return (
-    <MainLayout pathname="/not-found">
+    <MainLayout Hero={<MainHero {...notFoundHero} />}>
       <Container isCentered>
-        <Grid>
-          <Grid.Col span={12}>
-            <h1>404</h1>
-            <h2>Page not found</h2>
-            <p>Sorry, we couldn&apos;t find the page you&apos;re looking for.</p>
-
-            <Link href="/">
-              Go back to the homepage
-            </Link>
-          </Grid.Col>
-        </Grid>
+        <Center p="xl">
+          <Button component={Link} href="/" size="lg" color="cyan">Go back to the homepage</Button>
+        </Center>
       </Container>
     </MainLayout>
   )

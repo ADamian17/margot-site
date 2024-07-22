@@ -8,6 +8,7 @@ import FeaturedReviews from "@/components/FeaturedReviews";
 import ReviewsGrid from "./components/ReviewsGrid";
 import SectionContactForm from "@/components/SectionContactForm";
 import SoldPropertiesGrid from "./components/SoldPropertiesGrid";
+import MainHero from "./layouts/MainHero";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -163,6 +164,38 @@ Builder.registerComponent(SoldPropertiesGrid, {
     {
       type: "string",
       name: "subcopy",
+      defaultValue: "",
+    },
+  ],
+});
+
+Builder.registerComponent(MainHero, {
+  name: "MainHero",
+  noWrap: true,
+  inputs: [
+    {
+      type: "string",
+      name: "title",
+      defaultValue: "Margot Martin",
+    },
+    {
+      type: "string",
+      name: "subtitle",
+      defaultValue: "Real Estate Professional",
+    },
+    {
+      type: "string",
+      name: "pathname",
+      defaultValue: "/",
+    },
+    {
+      type: "file",
+      name: "videoUrl",
+      defaultValue: "",
+    },
+    {
+      type: "file",
+      name: "imageUrl",
       defaultValue: "",
     },
   ],
