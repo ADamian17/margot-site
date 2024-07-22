@@ -10,12 +10,19 @@ const mulish = Mulish({ subsets: ["latin"] });
 const theme = createTheme({
   white: "#fff",
   black: "#333",
+  breakpoints: {
+    xs: '360px',
+    sm: '576px',
+    md: '768px',
+    lg: '1024px',
+    xl: '90em',
+  },
   fontSizes: {
     xs: "12px",
     sm: "14px",
     md: "16px",
     lg: "18px",
-    xl: "20px",
+    xl: "1208px",
   },
   headings: {
     fontFamily: "inherit",

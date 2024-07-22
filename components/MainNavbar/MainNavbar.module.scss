@@ -1,0 +1,55 @@
+@use "sass:string";
+$sizes: "Sm", "Md", "Lg", "Xl";
+
+.nav {
+  --default-gap: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  gap: var(--default-gap);
+
+  &.vertical {
+    flex-direction: column;
+  }
+
+  .navLink {
+    display: inline-block;
+    text-decoration: none;
+    font-size: calc(
+      1.4rem + (18 - 14) * ((100vw - 300px) / (1600 - 300))
+    ); // Responsive font size
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  @include media-query("lg", "up") {
+    --default-gap: 2rem;
+
+    .navLink {
+      &::before {
+        background-color: $grey-30;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 0;
+        position: absolute;
+        transition: width 0.3s;
+        width: 0;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include media-query("xl", "up") {
+    --default-gap: 2.7rem;
+  }
+}

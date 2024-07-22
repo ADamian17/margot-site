@@ -1,0 +1,47 @@
+@use "sass:string";
+$sizes: "Sm", "Md", "Lg", "Xl";
+
+.nav {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  gap: 2.7rem;
+
+  &.vertical {
+    flex-direction: column;
+  }
+
+  .navLink {
+    display: inline-block;
+    text-decoration: none;
+    font-size: calc(
+      1.4rem + (20 - 14) * ((100vw - 300px) / (1600 - 300))
+    ); // Responsive font size
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  @include media-query("lg", "up") {
+    .navLink {
+      &::before {
+        background-color: $grey-30;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 0;
+        position: absolute;
+        transition: width 0.3s;
+        width: 0;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

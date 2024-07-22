@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import styles from "./FooterNavLinkSection.module.scss";
 import { Title } from "@mantine/core";
+import MainNavbar from "../MainNavbar";
 
 type FooterNavLinkSectionProps = {
   data: {
@@ -22,9 +23,7 @@ const FooterNavLinkSection: React.FC<FooterNavLinkSectionProps> = ({ data }) => 
     <section className={styles.quickLinksSection}>
       <Title order={2} size={40} style={{ textTransform: "uppercase", letterSpacing: 8 }}>{data?.headline}</Title>
 
-      <ul className={styles.linksSection}>
-        {navLinks}
-      </ul>
+      <MainNavbar orientation="vertical" navLinks={data.navLinks} />
     </section>
   )
 }

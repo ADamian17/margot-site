@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import FeaturedReviews from "@/components/FeaturedReviews";
 import ReviewsGrid from "./components/ReviewsGrid";
 import SectionContactForm from "@/components/SectionContactForm";
+import SoldPropertiesGrid from "./components/SoldPropertiesGrid";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -147,6 +148,22 @@ Builder.registerComponent(ReviewsGrid, {
           defaultValue: "",
         },
       ],
+    },
+  ],
+});
+
+Builder.registerComponent(SoldPropertiesGrid, {
+  name: "SoldPropertiesGrid",
+  inputs: [
+    {
+      type: "string",
+      name: "headline",
+      defaultValue: "",
+    },
+    {
+      type: "string",
+      name: "subcopy",
+      defaultValue: "",
     },
   ],
 });
