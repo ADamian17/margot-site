@@ -29,10 +29,10 @@ const builderModelName = "page";
 
 export default async function Page(props: PageProps) {
   const urlPath = `/${(props?.params?.page?.join("/") || "")}`;
-  const content = await getPageContent(builderModelName, `/${(props?.params?.page?.join("/") || "")}`)
+  const content = await getPageContent(builderModelName, urlPath)
 
   return (
-    <MainLayout pathname={urlPath}>
+    <MainLayout>
       <RenderBuilderContent content={content} model={builderModelName} />
     </MainLayout>
   )

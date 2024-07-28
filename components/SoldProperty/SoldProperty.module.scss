@@ -1,3 +1,55 @@
 .card {
-  background: red;
+  border-radius: 0.4rem;
+
+  .cardHeader {
+    border-radius: 0.4rem 0.4rem 0 0;
+    color: $white;
+    display: grid;
+    height: 22.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+
+    .badge,
+    .copy,
+    .imageWrapper {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .imageWrapper {
+      overflow: hidden;
+      position: relative;
+      z-index: -1;
+    }
+
+    .badge {
+      margin: 1.4rem 1.5rem;
+      place-self: start end;
+      z-index: 1;
+    }
+
+    .copy {
+      z-index: 1;
+      place-self: end center;
+      text-align: center;
+      padding-bottom: 1.3rem;
+    }
+
+    &:hover {
+      background-color: rgba(14, 13, 13, 0.65);
+    }
+  }
+
+  .cardBody {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    height: 13.5rem;
+    display: grid;
+    place-items: center;
+
+    p:first-of-type {
+      max-width: 20rem;
+    }
+  }
 }

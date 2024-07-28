@@ -30,12 +30,6 @@ const data = [
   },
   {
     navLink: {
-      urlPath: "/about-me",
-      urlText: "about me"
-    }
-  },
-  {
-    navLink: {
       urlPath: "/testimonials",
       urlText: "Testimonials"
     }

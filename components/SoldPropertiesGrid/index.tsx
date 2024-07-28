@@ -22,7 +22,9 @@ const SoldPropertiesGrid: React.FC<ReviewsGridType> = ({ headline, subcopy }) =>
         <Text size="md" c="dimmed" style={{ textAlign: "center" }}>{subcopy}</Text>
       </Group>
 
-      <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }}
+      <SimpleGrid
+        cols={{ base: 1, sm: 2, lg: 3 }}
+        pb={10}
         spacing={{ base: 10, sm: 'xl' }}
         verticalSpacing={{ base: 'md', sm: 'xl' }}
       >

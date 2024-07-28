@@ -15,6 +15,9 @@ const nextConfig = BuilderDevTools()({
       {
         hostname: "cdn.builder.io",
       },
+      {
+        hostname: "raw.githubusercontent.com",
+      },
     ],
     minimumCacheTTL: 1500000,
   },
