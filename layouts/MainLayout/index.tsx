@@ -14,7 +14,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, Hero }) => (
     <div id='sentinel' />
     <MainHeader />
     {Hero}
-    <main id='main-content'>
+    <main>
       {children}
     </main>
 

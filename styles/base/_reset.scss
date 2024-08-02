@@ -23,9 +23,11 @@ body {
 a,
 a:visited,
 a:link {
-  text-decoration: none;
-  font-size: inherit;
-  color: inherit;
+  &:not([class*="mantine-"]) {
+    text-decoration: none;
+    font-size: inherit;
+    color: inherit;
+  }
 }
 
 ul {
