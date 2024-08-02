@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import { createTheme, MantineProvider } from '@mantine/core';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import '@mantine/core/styles.css';
 import "@/styles/main.scss";
@@ -86,6 +87,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={mulish.className}>
         <MantineProvider defaultColorScheme="light" theme={theme}>
+          <SpeedInsights />
           {children}
         </MantineProvider>
       </body>
