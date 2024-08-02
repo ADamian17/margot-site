@@ -9,6 +9,7 @@ import ReviewsGrid from "./components/ReviewsGrid";
 import SectionContactForm from "@/components/SectionContactForm";
 import SoldPropertiesGrid from "./components/SoldPropertiesGrid";
 import MainHero from "./layouts/MainHero";
+import TextWithImage from "./components/TextWithImage";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -245,6 +246,43 @@ Builder.registerComponent(MainHero, {
       type: "file",
       name: "imageUrl",
       defaultValue: "",
+    },
+  ],
+});
+
+Builder.registerComponent(TextWithImage, {
+  name: "TextWithImage",
+  inputs: [
+    {
+      type: "string",
+      name: "title",
+      defaultValue: "",
+    },
+    {
+      type: "longText",
+      name: "text",
+      defaultValue: "",
+    },
+    {
+      type: "boolean",
+      name: "swapOrder",
+      defaultValue: false,
+    },
+    {
+      type: "object",
+      name: "image",
+      subFields: [
+        {
+          type: "file",
+          name: "src",
+          defaultValue: "",
+        },
+        {
+          type: "string",
+          name: "alt",
+          defaultValue: "",
+        },
+      ],
     },
   ],
 });

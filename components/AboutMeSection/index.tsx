@@ -2,8 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Container from "@/ui/Container";
-import Grid from "@/ui/grid-system/Grid";
+import Container from "@/ui/Container";;
 
 import styles from "./AboutMeSection.module.scss";
 
