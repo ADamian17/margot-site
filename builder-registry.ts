@@ -166,6 +166,54 @@ Builder.registerComponent(SoldPropertiesGrid, {
       name: "subcopy",
       defaultValue: "",
     },
+    {
+      type: "list",
+      name: "properties",
+      defaultValue: [],
+      subFields: [
+        {
+          type: "string",
+          name: "propertyLink",
+          defaultValue: "",
+        },
+        {
+          type: "number",
+          name: "price",
+          defaultValue: "",
+        },
+        {
+          type: "number",
+          name: "beds",
+          defaultValue: "",
+        },
+        {
+          type: "number",
+          name: "baths",
+          defaultValue: "",
+        },
+        {
+          type: "string",
+          name: "address",
+          defaultValue: "",
+        },
+        {
+          type: "number",
+          name: "originallyListed",
+          defaultValue: "",
+        },
+        {
+          type: "string",
+          name: "represented",
+          defaultValue: "Seller",
+          enum: ["Buyer", "Seller"],
+        },
+        {
+          type: "file",
+          name: "image",
+          defaultValue: "",
+        },
+      ],
+    },
   ],
 });
 

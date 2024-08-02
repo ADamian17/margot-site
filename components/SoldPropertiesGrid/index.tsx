@@ -3,17 +3,17 @@ import dynamic from 'next/dynamic';
 
 import Container from "@/ui/Container";
 import { Group, SimpleGrid, Space, Text, Title } from "@mantine/core";
-const ReviewCard = dynamic(() => import('../ReviewCard'), { ssr: false });
+import SoldProperty, { SoldPropertyProps } from "../SoldProperty";
 
 import styles from './SoldPropertiesGrid.module.scss';
-import SoldProperty from "../SoldProperty";
 
 type ReviewsGridType = {
   headline: string;
   subcopy: string;
+  properties: SoldPropertyProps[]
 };
 
-const SoldPropertiesGrid: React.FC<ReviewsGridType> = ({ headline, subcopy }) => {
+const SoldPropertiesGrid: React.FC<ReviewsGridType> = ({ headline, subcopy, properties }) => {
   return (
     <Container isCentered>
       <Group align="center" mb={200} justify="center">
@@ -28,9 +28,11 @@ const SoldPropertiesGrid: React.FC<ReviewsGridType> = ({ headline, subcopy }) =>
         spacing={{ base: 10, sm: 'xl' }}
         verticalSpacing={{ base: 'md', sm: 'xl' }}
       >
-        <SoldProperty />
-        <SoldProperty />
-        <SoldProperty />
+        {
+          properties && properties.map((property, index) => (
+            <SoldProperty key={property.propertyLink + index} {...property} />
+          ))
+        }
       </SimpleGrid>
     </Container>
   )

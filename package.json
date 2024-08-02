@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run gen && next dev",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"next,codegen\" -c \"cyan,green\" \"npm run dev:next\" \"npm run gen:watch\"",
+    "dev:next": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen": "graphql-codegen"
+    "gen:types": "graphql-codegen --config codegen.ts",
+    "gen:watch": "graphql-codegen --config codegen.ts --watch"
   },
   "dependencies": {
     "@builder.io/dev-tools": "^1.0.14",
@@ -25,10 +27,12 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
+    "@parcel/watcher": "^2.4.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-slick": "^0.23.13",
+    "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "prettier": "^3.3.1",

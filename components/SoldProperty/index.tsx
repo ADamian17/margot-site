@@ -1,48 +1,65 @@
 import React from "react";
-import { Badge, Button, Card, CardSection, Group, Overlay, Text } from "@mantine/core";
+import { Badge, Text } from "@mantine/core";
 
 import styles from "./SoldProperty.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { toCurrency } from "@/utils/toCurrency";
 
-const SoldProperty: React.FC = () => {
-  return (
-    <div className={styles.card}>
-      <Link href="/property/123">
-        <div className={styles.cardHeader}>
-          <div className={styles.imageWrapper}>
-            <Image
-              fill
-              src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-              alt="Norway"
-              className={styles.image}
-            />
-          </div>
+export type SoldPropertyProps = {
+  address: string
+  baths: number
+  beds: number
+  image: string
+  originallyListed: number
+  price: number
+  propertyLink: string
+  represented: "buyer" | "seller"
+}
 
-          <Badge color="gray" size="xl" className={styles.badge}>Sold</Badge>
-
-          <div className={styles.copy}>
-            <h3>$1,200,000</h3>
-            <h6>3 bed • 2 Baths</h6>
-          </div>
+const SoldProperty: React.FC<SoldPropertyProps> = ({
+  address,
+  baths,
+  beds,
+  image,
+  originallyListed,
+  price,
+  propertyLink,
+  represented,
+}) => (
+  <div className={styles.card}>
+    <Link href={propertyLink}>
+      <div className={styles.cardHeader}>
+        <div className={styles.imageWrapper}>
+          <Image
+            fill
+            src={image}
+            alt="property image"
+            className={styles.image}
+          />
         </div>
-      </Link>
 
-      <div className={styles.cardBody}>
-        <Text size="md">88 garland ave, Oakland, CA 94611</Text>
+        <Badge color="gray" size="xl" className={styles.badge}>Sold</Badge>
 
-        <Text size="md">
-          Originally Listed: 1,000,000
-        </Text>
-
-        <Text size="sm">
-          Represented: Seller
-        </Text>
-
-
+        <div className={styles.copy}>
+          <h3>{toCurrency(price)}</h3>
+          <h6>{beds} Beds • {baths} Baths</h6>
+        </div>
       </div>
+    </Link>
+
+    <div className={styles.cardBody}>
+      <Text size="md">{address}</Text>
+
+      <Text size="md">
+        Originally Listed: {toCurrency(originallyListed)}
+      </Text>
+
+      <Text size="sm">
+        Represented: {represented}
+      </Text>
     </div>
-  );
-};
+  </div>
+);
 
 export default SoldProperty;
