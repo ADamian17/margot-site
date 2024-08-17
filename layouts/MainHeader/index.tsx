@@ -40,7 +40,7 @@ const MainHeader = () => {
     <header ref={headerRef} className={`${styles.header} ${isSticky && styles.sticky}`}>
       <Link href='/' className={styles.logo}>
         <Image
-          src='/icons/dark-logo.svg'
+          src='/icons/dark-logo-2.svg'
           alt='margot logo'
           width={200}
           height={40}
