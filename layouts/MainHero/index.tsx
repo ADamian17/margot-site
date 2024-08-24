@@ -5,6 +5,7 @@ import { jost } from '@/assets/fonts';
 import { IconCircleChevronDown } from '@tabler/icons-react';
 
 import styles from './MainHero.module.scss'
+import Image from 'next/image';
 
 type MainHeroProps = {
   title: string;
@@ -14,14 +15,23 @@ type MainHeroProps = {
   pathname: string;
 }
 
-const MainHero: React.FC<MainHeroProps> = ({ title, subtitle, videoUrl, pathname }) => {
+const MainHero: React.FC<MainHeroProps> = ({ title, subtitle, videoUrl, pathname, imageUrl }) => {
   return (
     <section className={styles.hero}>
+      <Image
+        src={imageUrl}
+        layout='fill'
+        objectFit='cover'
+        alt='Hero Image'
+        className={styles.heroImage}
+      />
+
       <video
         autoPlay
         className={styles.heroVideo}
         loop
         muted
+        poster={imageUrl}
       >
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
