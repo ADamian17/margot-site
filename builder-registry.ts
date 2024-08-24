@@ -259,7 +259,7 @@ Builder.registerComponent(TextWithImage, {
       defaultValue: "",
     },
     {
-      type: "longText",
+      type: "richText",
       name: "text",
       defaultValue: "",
     },

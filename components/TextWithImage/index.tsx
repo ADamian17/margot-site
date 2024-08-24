@@ -21,7 +21,7 @@ const TextWithImage: React.FC<TextWithImageType> = ({ image, text, title, swapOr
       <section className={`${styles.wrapper} ${swapOrder && styles.reverse}`}>
         <div className={styles.copy}>
           <h2 className={styles.headline}>{title}</h2>
-          <p className={styles.text}>{text}</p>
+          <p className={styles.text} dangerouslySetInnerHTML={{ __html: text }} />
         </div>
 
         <div className={styles.imageWrapper}>
