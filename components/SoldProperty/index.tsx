@@ -28,7 +28,7 @@ const SoldProperty: React.FC<SoldPropertyProps> = ({
   represented,
 }) => (
   <div className={styles.card}>
-    <Link href={propertyLink}>
+    <Link href={propertyLink} target="_blank" rel="no-follow">
       <div className={styles.cardHeader}>
         <div className={styles.imageWrapper}>
           <Image
