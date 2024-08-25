@@ -31,7 +31,6 @@ const MainHero: React.FC<MainHeroProps> = ({ title, subtitle, videoUrl, pathname
         className={styles.heroVideo}
         loop
         muted
-        poster={imageUrl}
       >
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
