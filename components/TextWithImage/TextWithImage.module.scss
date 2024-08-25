@@ -31,7 +31,7 @@
 
   .imageWrapper {
     position: relative;
-    height: 38rem;
+    height: 53rem;
 
     .image {
       object-fit: cover;
@@ -39,8 +39,16 @@
     }
   }
 
+  @include media-query("md", "up") {
+    .imageWrapper {
+      justify-self: center;
+      width: 40rem;
+      height: 60rem;
+    }
+  }
+
   @include media-query("lg", "up") {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 1fr;
 
     .copy {
       translate: 3rem 0;
@@ -56,6 +64,7 @@
 
     .imageWrapper {
       height: 78rem;
+      width: 100%;
 
       .image {
         width: 100%;
@@ -64,6 +73,8 @@
     }
 
     &.reverse {
+      grid-template-columns: 1fr 1.1fr;
+
       .copy {
         translate: -3rem 0;
       }
