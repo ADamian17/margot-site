@@ -15,6 +15,7 @@ export type SoldPropertyProps = {
   price: number
   propertyLink: string
   represented: "buyer" | "seller"
+  status: "sold" | "pending" | "active"
 }
 
 const SoldProperty: React.FC<SoldPropertyProps> = ({
@@ -26,6 +27,7 @@ const SoldProperty: React.FC<SoldPropertyProps> = ({
   price,
   propertyLink,
   represented,
+  status = "sold",
 }) => (
   <div className={styles.card}>
     <Link href={propertyLink} target="_blank" rel="no-follow">
@@ -39,10 +41,10 @@ const SoldProperty: React.FC<SoldPropertyProps> = ({
           />
         </div>
 
-        <Badge color="gray" size="xl" className={styles.badge}>Sold</Badge>
+        <Badge color="gray" size="xl" className={styles.badge}>{status}</Badge>
 
         <div className={styles.copy}>
-          <h3>{toCurrency(price)}</h3>
+          {price && <h3>{toCurrency(price)}</h3>}
           <h6>{beds} Beds • {baths} Baths</h6>
         </div>
       </div>

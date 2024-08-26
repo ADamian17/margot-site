@@ -178,6 +178,12 @@ Builder.registerComponent(SoldPropertiesGrid, {
           defaultValue: "",
         },
         {
+          type: "string",
+          name: "status",
+          defaultValue: "sold",
+          enum: ["sold", "pending", "active"],
+        },
+        {
           type: "number",
           name: "price",
           defaultValue: "",

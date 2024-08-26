@@ -21,7 +21,6 @@ const MainHero: React.FC<MainHeroProps> = ({ title, subtitle, videoUrl, pathname
       <Image
         src={imageUrl}
         layout='fill'
-        objectFit='cover'
         alt='Hero Image'
         className={styles.heroImage}
       />
