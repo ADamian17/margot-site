@@ -120,6 +120,22 @@ Builder.registerComponent(ReviewsGrid, {
       defaultValue: "",
     },
     {
+      type: "object",
+      name: "featuredReviewQuote",
+      subFields: [
+        {
+          type: "string",
+          name: "quote",
+          defaultValue: "",
+        },
+        {
+          type: "string",
+          name: "author",
+          defaultValue: "",
+        },
+      ],
+    },
+    {
       type: "string",
       name: "subcopy",
       defaultValue: "",
